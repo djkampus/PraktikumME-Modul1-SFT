@@ -1,0 +1,3 @@
+https://www.scilab.org/software/scilab/signal-processing  
+https://www.mathworks.com/help/matlab/ref/fft.html
+https://www.academia.edu/17036828/KONVOLUSI_MENGGUNAKAN_MATLAB
