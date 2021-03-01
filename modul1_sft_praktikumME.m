@@ -39,7 +39,7 @@ total_loss_line1=10^((-1)*(cable1_loss+gamma1_db)/10);
 %Transmission line rg-6 55Mhz coded as cable2
 cable2_lenght=20e3;%spec b dengan 20km kabel
 attenuation2=5.25/100;%atenuasi kabel yang dipakai(dB/m)
-cable2_loss=attenuation*cable2_lenght;
+cable2_loss=attenuation2*cable2_lenght;
 gamma2=1;%belum siap refrection coef
 gamma2_db=10*log10(1/1-(abs(gamma2)^2));
 total_loss_line2=10^((-1)*(cable2_loss+gamma2_db)/10);
