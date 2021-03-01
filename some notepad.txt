@@ -1,3 +1,7 @@
 https://www.scilab.org/software/scilab/signal-processing  
+https://www.dsprelated.com/thread/2946/matlab-code-for-ssb-demodulation-using-phasing-method
 https://www.mathworks.com/help/matlab/ref/fft.html
 https://www.academia.edu/17036828/KONVOLUSI_MENGGUNAKAN_MATLAB
+https://www.mathworks.com/matlabcentral/answers/299515-code-for-signal-analysis
+https://www.mathworks.com/help/matlab/ref/fft.html
+https://www.mathworks.com/help/signal/ug/single-sideband-amplitude-modulation.html
