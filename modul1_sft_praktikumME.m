@@ -4,11 +4,11 @@ f_work=8e6;%frekuensi isyarat informasi
 power=15;%power kerja
 Fs=2*f_work;%sampling frequency
 T=1/Fs;%sampling period
-L=1000;%signal lenght(time observation)
+L=200;%signal lenght(time observation)
 t=(0:L-1)*T;%time vector
 N=1000;%jumlah deret impuls
 n=(0:N-1);
-P=power*sin(2*pi*f_work*t);%sinewave generator
+P=power.*sin(2*pi*f_work.*t);%sinewave generator
 P_fft=fft(P);%fourier transform(automatic module)
 P_fft_magnitude=abs(P_fft)./L;
 figure(1)
