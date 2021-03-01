@@ -1,9 +1,8 @@
 %persiapan signal generation sinyal inf0 8 Mhz power 15W
 f_work=8e6;
-t_work=1/(2*f_work);%sampling period?
-L=100;%time observation?
+t_work=1/f_work;%sampling period?
 power=15;%daya pemancar
-t=(0:L-1)*t_work;%time vector
+t=(0:0.001:1);%time vector
 si=power*sin(2*pi*f_work*t);%sine wave generator
 si_fft=fft(si);
 si_fft_magnitude=abs(si_fft)./t;
@@ -14,6 +13,9 @@ title('Time Domain')
 xlabel('Time in sec')
 ylabel('Amplitude(V or A)')
 
+%frequency domain two sided
+si_fft_double=fftshift(si_fft_magnitude);
+axis_double=(-1*len(t/2):len(t/2)-1)*
 %persiapan signal generator
 %signal carrier
 %signal carrier
