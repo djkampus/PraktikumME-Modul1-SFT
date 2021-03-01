@@ -24,6 +24,10 @@ plot(t,P)
 %usb_left=(theta2/pi)*sinc((theta2(n-0.5*N)/pi));
 %usb_right=(theta1/pi)*sinc((theta1(n-0.5*N)/pi));
 %h(n)=usb_left-usb_right;
+fc_usb_f=55e6;
+fs_usb_f=fc_usb_f*4;
+w_usb=(2*pi)*(fc_usb_f/fs_usb_f);
+wc_usb=w_usb/pi;
 %USB Filter
 %Amplifier1
 %Amplifier1
@@ -55,6 +59,11 @@ total_loss_line3=10^((-1)*(cable3_loss+gamma3_db)/10);
 %Transmission line
 
 %lowpass filter
+fc_lp=8e6;%frekuensi informasi yang ingin diambil
+fs_lp=4*fc;%sampling freq filter
+w_lp=(2*pi)*(fc_lp/fs_lp);
+wc_lp=w_lp/pi;
+usb=highpass(w_lp,fc_lp,fs_lp);
 %lowpass filter
 %Amplifier2
 %Amplifier2
