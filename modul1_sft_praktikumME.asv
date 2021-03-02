@@ -88,7 +88,7 @@ xlim([0, 100])
 %demodulasi ssb
 %tangkap sinyal dan tambahkan carrier signal
 capture=ssb_upper.*carrier;
-capt_filter=lowpass(capture,50);
+title('capture signal')
 
 %Transmission line rg-59 55Mhz Coded as Cable1
 cable1_lenght=20e3;%spec b dengan 20km kabel
