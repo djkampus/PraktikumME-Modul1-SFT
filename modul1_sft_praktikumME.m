@@ -71,7 +71,44 @@ xlim([0, 100])
 
 
 %USB Filter
-%
+
+f1 = 52;
+f2 = 100;
+theta1 = (2*pi*f1)/fs;
+theta2 = (2*pi*f2)/fs;
+N = 10000;
+n = (0:1:N-1);
+hn = ((theta2/pi) .* sinc(((theta2).*(n-0.5*N))/pi) - (theta1/pi) .* sinc(((theta1).*(n-0.5*N))/pi));
+hn = abs(fft(hn));
+hn = hn(1:(0.5*N)+1);
+axis_single=(0:N/2)*(fs/N);
+figure();
+plot(axis_single,hn);
+title('USB Filter');
+xlabel('frequency');
+ylabel('filter gain');
+xlim([0,100])
+
+%low pass filter (ternyata buat aja f1=0)
+
+f1_lp = 0;
+f2_lp = 60;
+theta1 = (2*pi*f1_lp)/fs;
+theta2 = (2*pi*f2_lp)/fs;
+N = 10000;
+n = (0:1:N-1);
+hn = ((theta2/pi) .* sinc(((theta2).*(n-0.5*N))/pi) - (theta1/pi) .* sinc(((theta1).*(n-0.5*N))/pi));
+hn = abs(fft(hn));
+hn = hn(1:(0.5*N)+1);
+axis_single=(0:N/2)*(fs/N);
+figure();
+plot(axis_single,hn);
+title('Lowpass Filter');
+xlabel('frequency');
+ylabel('filter gain');
+xlim([0,100])
+
+
 %Transmission line rg-59 55Mhz Coded as Cable1
 cable1_lenght=20e3;%spec b dengan 20km kabel
 attenuation1=6.4/100;%atenuasi kabel yang dipakai(dB/m)
