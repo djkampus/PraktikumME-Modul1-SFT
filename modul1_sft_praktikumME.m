@@ -1,20 +1,17 @@
 %persiapan signal generation sinyal inf0 8 Mhz power 15W
-f_work=8e6;
-t_work=1/(2*f_work);%sampling period?
-L=100;%time observation?
-power=15;%daya pemancar
-t=(0:L-1)*t_work;%time vector
-si=power*sin(2*pi*f_work*t);%sine wave generator
-si_fft=fft(si);
-si_fft_magnitude=abs(si_fft)./t;
-%plotting 1
-figure(1);
-plot(t,si_fft)
-title('Time Domain')
-xlabel('Time in sec')
-ylabel('Amplitude(V or A)')
-
+f_carrier=55e6;
+f_message=8e6;
+t=linspace(0,1,1000);
+power=15;
+message=sin(2*pi*f_message*t);
+carrier=power.*sin(pi*f_carrier*t);%masih full AM
+modulated=message.*carrier;
+plot (t,modulated)
+title('single side band');
+xlabel('time')
+ylabel('ssb')
 %persiapan signal generator
+%
 %signal carrier
 %signal carrier
 %USB Filter
